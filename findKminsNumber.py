@@ -25,7 +25,7 @@ def swap(heap, parent, index):
 
 
 def heapInsert(heap, value, index):
-    heap[index] = value
+    heap.insert(index, value)
     while index != 0:
         parent = (index - 1) // 2
         if heap[parent] < heap[index]:
@@ -33,6 +33,7 @@ def heapInsert(heap, value, index):
             index = parent
         else:
             break
+    print(heap)
 
 
 def getMinKnumbersByheap(arr, k):
@@ -43,8 +44,13 @@ def getMinKnumbersByheap(arr, k):
         heapInsert(heap, l[i], i)
     for i in range(k, len(arr)):
         if heap[0] > l[i]:
+            heap[0] = l[i]
             heapify(heap, 0, k)
     return heap
 
 
-
+if __name__ == '__main__':
+    l = [9, 4, 8, 3, 1, 2, 5]
+    print(l)
+    res = getMinKnumbersByheap(l, 3)
+    print(res)
