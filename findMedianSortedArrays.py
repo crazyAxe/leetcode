@@ -1,32 +1,22 @@
 def findMedianSortedArrays(nums1, nums2):
-    from math import ceil
-    if len(nums1) == 0:
-        return nums2[len(nums2)/2]
-    elif len(nums2) == 0:
-        return nums1[len(nums1)/2]
-    else:
-
-        n = len(nums1) - 1
-        m = len(nums2) - 1
-        i = j = 0
-        res = 0
-        while i <= n and j <= m:
-            if nums1[i] <= nums2[j]:
-                res += 1
-                i += 1
-
-                if res == ceil((m+n)/2) + 1:
-                    return nums1[i-1]
-            else:
-                res += 1
-                j += 1
-                if res == ceil((m+n)/2) + 1:
-                    return nums2[j-1]
-
-        if i < n:
-            return nums1[(m+n+1)/2 - res + i]
+    nums3 = []
+    i = j = 0
+    while i < len(nums1) and j < len(nums2):
+        if nums1[i] < nums2[j]:
+            nums3.append(nums1[i])
+            i += 1
         else:
-            return nums2[(m+n+1)//2 - res + j]
+            nums3.append(nums2[j])
+            j += 1
+    while j < len(nums2):
+        nums3.append(nums2[j])
+        j += 1
+    while i < len(nums1):
+        nums3.append(nums1[i])
+        i += 1
+    if len(nums3) % 2:
+        return nums3[len(nums3)//2]
+    else:
+        # there must be a ' * 1.0 ' to transfer to float result, or you will get wrong!!
+        return (nums3[int(len(nums3)/2)] + nums3[int(len(nums3)/2 - 1)]) * 1.0 / 2
 
-res = findMedianSortedArrays([2], [])
-print(res)
