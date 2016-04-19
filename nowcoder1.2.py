@@ -14,3 +14,18 @@ res = []
 midOrder(res, 3, 'down')
 print(res)
 
+
+# class FoldPaper:
+#
+#     def foldPaperHelper(self, res, n, str):
+#         if n==0:
+#             return None
+#         self.foldPaperHelper(res, n-1, 'down')
+#         res.append(str)
+#         self.foldPaperHelper(res, n-1, 'up')
+#         return res
+#
+#     def foldPaper(self, n):
+#     	res = []
+#         self.foldPaperHelper(res, n, 'down')
+#         return res
