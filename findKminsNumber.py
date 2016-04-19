@@ -14,6 +14,8 @@ def heapify(heap, index, heapsize):
             largest = right
         if largest != index:
             swap(heap, largest, index)
+        else:
+            break
         index = largest
         left = index * 2 + 1
         right = index * 2 + 2
@@ -52,5 +54,5 @@ def getMinKnumbersByheap(arr, k):
 if __name__ == '__main__':
     l = [9, 4, 8, 3, 1, 2, 5]
     print(l)
-    res = getMinKnumbersByheap(l, 3)
+    res = getMinKnumbersByheap(l, 7)
     print(res)
