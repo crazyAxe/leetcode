@@ -8,7 +8,8 @@ problem:
 
 2.findMedianSortedArrays.py
   #4
-  desc: There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity        should be O(log (m+n)).
+  desc: There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays.
+  The overall run time complexity  should be O(log (m+n)).
   time complexisy: O(log(m+n))
   space complexisy : O(m+n)
 
@@ -26,3 +27,8 @@ problem:
 5.LongestPalindromicSubstring.py
   #5
   time complexisy : O(n^2)
+
+6.zigzagCoversion.py
+  #6
+  time complexity: O(nm)   or  O(n)? -- only visit each item once.
+  space complexity: O(n)

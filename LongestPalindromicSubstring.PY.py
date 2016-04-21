@@ -69,3 +69,22 @@ findlongestPalindrome(l)
 #     }
 #     return R - L - 1;
 # }
+
+def expandAroundCenter(s, left, right):
+    l = left
+    r = right
+    while l >= 0 and r < len(s) and s[l] == s[r]:
+        l -= 1
+        r += 1
+    return r - l - 1
+
+def longestPalindrome(s):
+    start = end = 0
+    for i in range(len(s)):
+        len1 = expandAroundCenter(s, i, i)
+        len2 = expandAroundCenter(s, i, i+1)
+        len_res = max(len1, len2)
+        if len_res > (end - start):
+            start = i - int((len_res -1)//2)
+            end = i + int(len_res//2)
+    return s[start: end+1]
