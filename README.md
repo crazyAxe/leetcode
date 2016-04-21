@@ -22,3 +22,7 @@ problem:
   desc: there is 15 steps, Tom can reach step over 3 steps at most in one pace. how many ways can he reach the 15 steps?
   method : Dynamic programming. f(n) = f(n-1) + f(n-2) + f(n-3)
   time complexisy : ?
+
+5.LongestPalindromicSubstring.py
+  #5
+  time complexisy : O(n^2)
