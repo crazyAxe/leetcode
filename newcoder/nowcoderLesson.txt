@@ -1,0 +1,12 @@
+1. CHAPTER 1
+#1.
+
+2. CHAPTER 2
+#1. given a function fn1() which can randomly and 'equal frequency' generate (1,2,3,4,5). try to find a fn2() to randomly
+    and 'equal frequency' generate (1, 2, 3, 4, 5, 6, 7)
+
+#2. given a unsorted array a , find the shortest substring which need to be sorted.
+    eg.for list[1, 6, 4, 5, 8, 9], the output should be [6, 4, 5]
+
+#3. given a array a[], try to find a divide point i, which make sum(a[0]...a[i]) - sum(a[i+1]..a[n-1]) = k.
+    return the i or None
