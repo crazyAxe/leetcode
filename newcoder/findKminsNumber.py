@@ -51,8 +51,20 @@ def getMinKnumbersByheap(arr, k):
     return heap
 
 
+def getMinKnums(arr, k):
+    import heapq
+    heap = []
+    for i in range(k):
+        heapq.heappush(heap, arr[i])
+    for i in range(k, len(arr)):
+        heapq.heappushpop(heap, arr[i])
+    return heap
+
+
 if __name__ == '__main__':
     l = [9, 4, 8, 3, 1, 2, 5]
     print(l)
-    res = getMinKnumbersByheap(l, 7)
+    res = getMinKnums(l, 4)
     print(res)
+
+

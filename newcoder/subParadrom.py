@@ -1,6 +1,3 @@
-
-
-
 def ExpandAroundCenter(arr, center, r):
     i = center - r
     j = center + r
@@ -9,8 +6,10 @@ def ExpandAroundCenter(arr, center, r):
         j += 1
     return j - center
 
+
 def preArray(arr):
     return "#" + "#".join(arr) + "#"
+
 
 def postArray(arr):
     res = ''
@@ -54,7 +53,7 @@ def getLongestPalindrome(strs):
         else:
             parr[i] = ExpandAroundCenter(arr, i ,0)
             pright = i + parr[i]
-            index = i + parr[i]
+            index = i
     print(parr)
 
     res = getResult(arr, parr)

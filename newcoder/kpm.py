@@ -19,6 +19,8 @@ def getNext(pattern, next):
     return next
 
 def kmp(strs, pattern):
+    if not pattern:
+        return 0
     a = [0 for x in range(len(pattern))]
     next = getNext(pattern, a)
     print(next)
@@ -32,10 +34,11 @@ def kmp(strs, pattern):
             print("find from %d" % (i- len(pattern) + 1))
             return
     return None
-pattern = "bxbababca"
+pattern = "issip"
 # next = [0 for x in range(len(pattern))]
 # getNext(pattern, next)
 # print(next)
-strs = "ababxbababcadfdsss"
+strs = "mississippi"
+
 kmp(strs, pattern)
 
